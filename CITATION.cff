@@ -6,9 +6,9 @@ authors:
   -
     family-names: Kok
     given-names: Dörte
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+    orcid: "https://orcid.org/0000-0002-9437-6230"
 date-released: 20??-MM-DD
-doi: <insert your DOI here>
+doi: 10.5281/zenodo.7646873
 version: "0.1.0"
 repository-code: "git@github.com:doerte/discuit-project"
 keywords:
