@@ -1,1 +1,18 @@
-
+{
+    "creators": [
+        {
+            "affiliation": "University of Groningen",
+            "name": "De Kok, Dörte",
+            "orcid": "0000-0002-9437-6230"
+        }
+    ],
+    "description": "Package to divide lists of items in subsets that are as similar as possible in terms of multiple specified parameters (numerical and/or categorical)",
+    "keywords": [
+        "item division",
+        "clustering"
+    ],
+    "license": {
+        "id": "Apache-2.0"
+    },
+    "title": "Discuit"
+}
