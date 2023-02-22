@@ -5,14 +5,15 @@ title: "discuit_package"
 authors:
   -
     family-names: Kok
+    name-particle: de
     given-names: Dörte
     orcid: "https://orcid.org/0000-0002-9437-6230"
-date-released: 20??-MM-DD
+date-released: 2023-MM-DD
 doi: 10.5281/zenodo.7646873
 version: "0.1.0"
 repository-code: "git@github.com:doerte/discuit-project"
 keywords:
-  - The goal of this package is to split datasets (e.g. words defined by several variables) into subsets that are as comparable as possible.
-  - The package takes a csv file as input and generates a defined number of matched sets for a given number of continuous and categorical variables. One of the categorical variables can be selected to be split absolutely even across sets.clustering
+  - item division
+  - clustering
 message: "If you use this software, please cite it using these metadata."
 license: Apache-2.0
