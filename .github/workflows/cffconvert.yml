@@ -19,5 +19,3 @@ jobs:
 
       - uses: citation-file-format/cffconvert-github-action@main
         name: Check whether the citation metadata from CITATION.cff is equivalent to that in .zenodo.json
-        with:
-          args: "--validate"
