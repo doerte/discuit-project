@@ -11,7 +11,7 @@ authors:
 date-released: 2023-MM-DD
 doi: 10.5281/zenodo.7646873
 version: "0.1.0"
-repository-code: "git@github.com:doerte/discuit-project"
+repository-code: "https://github.com/doerte/discuit-project"
 keywords:
   - item division
   - clustering
