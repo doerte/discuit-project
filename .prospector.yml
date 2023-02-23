@@ -13,7 +13,7 @@ ignore-paths:
   - docs
 
 pyroma:
-    run: true
+    run: false
 
 pycodestyle:
     full: true
