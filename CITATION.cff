@@ -8,8 +8,8 @@ authors:
     name-particle: de
     given-names: Dörte
     orcid: "https://orcid.org/0000-0002-9437-6230"
-date-released: 2023-MM-DD
-doi: 10.5281/zenodo.7646873
+date-released: 2023-02-23
+doi: 10.5281/zenodo.7671857
 version: "0.1.0"
 repository-code: "https://github.com/doerte/discuit-project"
 keywords:
