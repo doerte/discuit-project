@@ -20,7 +20,7 @@
 | SonarCloud                         | [![sonarcloud](https://github.com/doerte/discuit-project/actions/workflows/sonarcloud.yml/badge.svg)](https://github.com/doerte/discuit-project/actions/workflows/sonarcloud.yml) |
 | MarkDown link checker              | [![markdown-link-check](https://github.com/doerte/discuit-project/actions/workflows/markdown-link-check.yml/badge.svg)](https://github.com/doerte/discuit-project/actions/workflows/markdown-link-check.yml) |
 
-## How to use discuit_package
+## How to use Discuit
 
 Dynamic item set clustering UI tool
 

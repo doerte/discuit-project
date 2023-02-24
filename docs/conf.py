@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"discuit_package"
+project = u"discuit"
 copyright = u"2023, Dörte de Kok"
 author = u"Dörte de Kok"
 
@@ -61,7 +61,7 @@ todo_include_todos = False
 
 # -- Use autoapi.extension to run sphinx-apidoc -------
 
-autoapi_dirs = ['../discuit_package']
+autoapi_dirs = ['../discuit']
 
 # -- Options for HTML output ----------------------------------------------
 

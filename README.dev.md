@@ -15,7 +15,7 @@ source env/bin/activate
 python3 -m pip install --upgrade pip setuptools
 
 # (from the project root directory)
-# install discuit_package as an editable package
+# install discuit as an editable package
 python3 -m pip install --no-cache-dir --editable .
 # install development dependencies
 python3 -m pip install --no-cache-dir --editable .[dev]
@@ -70,15 +70,15 @@ development tools installed.
 # linter
 prospector
 
-# recursively check import style for the discuit_package module only
-isort --recursive --check-only discuit_package
+# recursively check import style for the discuit module only
+isort --recursive --check-only discuit
 
-# recursively check import style for the discuit_package module only and show
+# recursively check import style for the discuit module only and show
 # any proposed changes as a diff
-isort --recursive --check-only --diff discuit_package
+isort --recursive --check-only --diff discuit
 
-# recursively fix import style for the discuit_package module only
-isort --recursive discuit_package
+# recursively fix import style for the discuit module only
+isort --recursive discuit
 ```
 
 To fix readability of your code style you can use [yapf](https://github.com/google/yapf).
@@ -150,7 +150,7 @@ In a new terminal, without an activated virtual environment or an env directory:
 
 ```shell
 # prepare a new directory
-cd $(mktemp -d discuit_package.XXXXXX)
+cd $(mktemp -d discuit.XXXXXX)
 
 # fresh git clone ensures the release has the state of origin/main branch
 git clone git@github.com:doerte/discuit-project .
@@ -167,7 +167,7 @@ python3 -m pip install --no-cache-dir .
 python3 -m pip install --no-cache-dir .[publishing]
 
 # clean up any previously generated artefacts
-rm -rf discuit_package.egg-info
+rm -rf discuit.egg-info
 rm -rf dist
 
 # create the source distribution and the wheel
@@ -184,7 +184,7 @@ and verify that your package was uploaded successfully. Keep the terminal open, 
 In a new terminal, without an activated virtual environment or an env directory:
 
 ```shell
-cd $(mktemp -d discuit_package-test.XXXXXX)
+cd $(mktemp -d discuit-test.XXXXXX)
 
 # prepare a clean virtual environment and activate it
 python3 -m venv env
@@ -196,7 +196,7 @@ pip install --upgrade pip setuptools
 # install from test pypi instance:
 python3 -m pip -v install --no-cache-dir \
 --index-url https://test.pypi.org/simple/ \
---extra-index-url https://pypi.org/simple discuit_package
+--extra-index-url https://pypi.org/simple discuit
 ```
 
 Check that the package works as it should when installed from pypitest.

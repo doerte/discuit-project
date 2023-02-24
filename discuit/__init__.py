@@ -1,4 +1,4 @@
-"""Documentation about discuit_package"""
+"""Documentation about discuit"""
 import logging
 
 

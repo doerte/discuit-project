@@ -1,9 +1,9 @@
-"""Tests for the discuit_package.my_module module.
+"""Tests for the discuit.my_module module.
 """
 #import pytest
 
 import pandas as pd
-from discuit_package.my_module import prepare_data
+from discuit.run_discuit import prepare_data
 
 d = {'keep': {0: 1.0, 1: 2.0, 2: 3.0}, 'drop': {0: 1.0, 1: 2.0, 2: 3.0}}
 df = pd.DataFrame(d)
