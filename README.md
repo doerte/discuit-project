@@ -1,7 +1,5 @@
 ## Badges
 
-(Customize these badges with your own links, and check https://shields.io/ or https://badgen.net/ to see which other badges are available.)
-
 | fair-software.eu recommendations | |
 | :-- | :--  |
 | (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/doerte/discuit-project) |
@@ -24,7 +22,13 @@
 
 Dynamic item set clustering UI tool
 
-The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
+Goal: Splitting datasets (e.g. words defined by several variables) into subsets that are as comparable as possible.
+
+The package takes a csv file as input and generates a defined number of matched sets for a given number of continuous and categorical variables. One of the categorical variables can be selected to be split absolutely even across sets.
+
+In the future, this will be integrated in an GUI. 
+
+The project setup is documented in [project_setup.md](project_setup.md).
 
 ## Installation
 
@@ -36,9 +40,9 @@ cd discuit-project
 python3 -m pip install .
 ```
 
-## Documentation
+<!-- ## Documentation
 
-Include a link to your project's full documentation here.
+Include a link to your project's full documentation here. --> 
 
 ## Contributing
 
