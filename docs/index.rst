@@ -1,9 +1,9 @@
-.. discuit_package documentation master file, created by
+.. discuit documentation master file, created by
    sphinx-quickstart on Wed May  5 22:45:36 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to discuit_package's documentation!
+Welcome to discuit's documentation!
 ==========================================================
 
 .. toctree::

@@ -22,8 +22,8 @@ isort --recursive --check-only discuit
 
 if [ $? != "0" ]; then
     echo "Commit aborted."
-    echo "  Run 'isort --recursive --check-only --diff discuit_package' to see what's wrong."
-    echo "  Run 'isort --recursive discuit_package' to let isort fix problems automatically."
+    echo "  Run 'isort --recursive --check-only --diff discuit' to see what's wrong."
+    echo "  Run 'isort --recursive discuit' to let isort fix problems automatically."
     exit 1
 fi
 

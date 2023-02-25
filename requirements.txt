@@ -4,40 +4,40 @@
 #
 #    pip-compile
 #
-argparse==1.4.0
-    # via discuit-package (setup.py)
-joblib==1.2.0
+argparse>=1.4.0
+    # via discuit (setup.py)
+joblib>=1.2.0
     # via
     #   kmodes
     #   scikit-learn
-kmodes==0.12.2
-    # via discuit-package (setup.py)
-numpy==1.24.2
+kmodes>=0.12.0
+    # via discuit (setup.py)
+numpy>=1.24.0
     # via
     #   kmodes
     #   pandas
     #   scikit-learn
     #   scipy
-pandas==1.5.3
-    # via discuit-package (setup.py)
-pathlib==1.0.1
-    # via discuit-package (setup.py)
-python-dateutil==2.8.2
+pandas>=1.5.0
+    # via discuit (setup.py)
+pathlib>=1.0.0
+    # via discuit (setup.py)
+python-dateutil>=2.8.0
     # via pandas
-pytz==2022.7.1
+pytz>=2022.7.0
     # via pandas
-scikit-learn==1.2.1
-    # via kmodes
-scipy==1.10.1
+scikit-learn>=1.2.0
     # via
-    #   discuit-package (setup.py)
+    #   discuit (setup.py)
+    #   kmodes
+scipy>=1.10.0
+    # via
+    #   discuit (setup.py)
     #   kmodes
     #   scikit-learn
-six==1.16.0
+six>=1.16.0
     # via python-dateutil
-sklearn==0.0.post1
-    # via discuit-package (setup.py)
-threadpoolctl==3.1.0
+threadpoolctl>=3.1.0
     # via scikit-learn
-typing==3.7.4.3
-    # via discuit-package (setup.py)
+typing>=3.7.4.0
+    # via discuit (setup.py)

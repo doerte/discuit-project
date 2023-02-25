@@ -1,4 +1,4 @@
-# `discuit_package` developer documentation
+# `discuit` developer documentation
 
 If you're looking for user documentation, go [here](README.md).
 
@@ -33,7 +33,7 @@ The first way requires an activated virtual environment with the development too
 pytest -v
 ```
 
-The second is to use `tox`, which can be installed separately (e.g. with `pip install tox`), i.e. not necessarily inside the virtual environment you use for installing `discuit_package`, but then builds the necessary virtual environments itself by simply running:
+The second is to use `tox`, which can be installed separately (e.g. with `pip install tox`), i.e. not necessarily inside the virtual environment you use for installing `discuit`, but then builds the necessary virtual environments itself by simply running:
 
 ```shell
 tox
@@ -178,7 +178,7 @@ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 ```
 
 Visit
-[https://test.pypi.org/project/discuit_package](https://test.pypi.org/project/discuit_package)
+[https://test.pypi.org/project/discuit](https://test.pypi.org/project/discuit)
 and verify that your package was uploaded successfully. Keep the terminal open, we'll need it later.
 
 In a new terminal, without an activated virtual environment or an env directory:
