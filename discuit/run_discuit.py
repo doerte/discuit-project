@@ -1,5 +1,5 @@
 # TODO: work with missing data
-# TODO: maybe include more than 1 absolute variable?
+# TODO: maybe include more than 1 absolute variable? maybe all categorical?
 # pylint: disable-msg=too-many-locals
 
 import argparse
