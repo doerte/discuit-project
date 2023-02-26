@@ -61,7 +61,7 @@ todo_include_todos = False
 
 # -- Use autoapi.extension to run sphinx-apidoc -------
 
-autoapi_dirs = ['../discuit_package']
+autoapi_dirs = ['../discuit']
 
 # -- Options for HTML output ----------------------------------------------
 
