@@ -52,8 +52,9 @@ Include a link to your project's full documentation here. -->
 In the terminal, run Discuit with the following command:
 python3 run_discuit.py "name of input file" [number of desired sets] --columns l/c/n/a/d --runs [desired number of runs]
 
-Example: python3 run_discuit.py tests/test.csv 2 --columns l c n a n d --runs 3
-This will run Discuit with the provided testfile and create 2 subsets. The columns in the file are identified as "label", "categorical", "numerical", "absolute", "numerical" and "disregard" (in that order). The program will run 3 times (and create 3 output files).
+Example: python3 run_discuit.py example/input.csv 2 --columns l c n a n d --runs 3
+
+This will run Discuit with the [provided testfile](example/input.csv) and create 2 subsets. The columns in the file are identified as "label", "categorical", "numerical", "absolute", "numerical" and "disregard" (in that order). The program will run 3 times (and create 3 output files).
 
 
 The input file needs to be a .csv file with a first line containing headings followed by rows that represent the different items. Each column specifies one variable. There cannot be missing data (for now). When launching the script, please specify per column what kind a data the script should expect: (l)abel: just a label, will not be taken into consideration, could be the itemname or itemnumber. This can only be assigned once. (n)umerical: a numerical variable, such as frequency or AoA, (c)ategorical: a categorical variable, such as "transitivity" or "accuracy", (a)bsolute: this needs to be perfectly divided between sets. This can only be assigned once. (d)isregard: a column that does not need to be taken into account for the split, but contains other information you have in the same file.
