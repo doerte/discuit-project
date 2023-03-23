@@ -1,5 +1,5 @@
 # TODO: work with missing data
-# TODO: maybe include more than 1 absolute variable? maybe all categorical?
+# TODO: maybe include more than 1 absolute variable? maybe all categorical variables can be absolute?
 # pylint: disable-msg=too-many-locals
 
 import argparse
@@ -127,12 +127,16 @@ def prepare_data(data, continuous, categorical, label, disregard):
         data = data.drop(disregard, axis=1)
     # transform continuous data
     if len(continuous) != 0:
-        # TODO replace md with average
+        #replace md with average
+        for feat in continuous:
+            data[feat].fillna(data[feat].mean(), inplace=True)
         mms = MinMaxScaler()
         data[continuous] = mms.fit_transform(data[continuous])
     # make sure categorical data uses numbers (for silhouette score)
     if len(categorical) != 0:
         for feat in categorical:
+            # replace missing data with dummy category
+            data[feat].fillna("missingData", inplace=True)
             if data[feat].dtype not in ("float64", "int64"):
                 # find unique values
                 values = data[feat].unique()
@@ -141,7 +145,6 @@ def prepare_data(data, continuous, categorical, label, disregard):
                 for value in values:
                     data[feat].replace(value, i, inplace=True)
                     i=i+1
-        # TODO handle missing data
     return data
 
 
@@ -313,8 +316,6 @@ def write_out(stats, i, significant, it_num):
 
             f.write(stat_string)
             f.close()
-
-
 
 def run_all(i, it_num):
     output_sets = []

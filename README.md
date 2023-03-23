@@ -52,16 +52,29 @@ Include a link to your project's full documentation here. -->
 In the terminal, run Discuit with the following command:
 python3 run_discuit.py "name of input file" [number of desired sets] --columns l/c/n/a/d --runs [desired number of runs]
 
-Example: python3 run_discuit.py example/input.csv 2 --columns l c n a n d --runs 3
+Example: python3 run_discuit.py example/input.csv 2 --columns l a n c n d --runs 3
 
 This will run Discuit with the [provided testfile](example/input.csv) and create 2 subsets. The columns in the file are identified as "label", "categorical", "numerical", "absolute", "numerical" and "disregard" (in that order). The program will run 3 times (and create 3 output files).
 
+### Required input
+The input file needs to be a .csv file with a first line containing headings followed by rows that represent the different items. Each column specifies one variable. 
 
-The input file needs to be a .csv file with a first line containing headings followed by rows that represent the different items. Each column specifies one variable. There cannot be missing data (for now). When launching the script, please specify per column what kind a data the script should expect: (l)abel: just a label, will not be taken into consideration, could be the itemname or itemnumber. This can only be assigned once. (n)umerical: a numerical variable, such as frequency or AoA, (c)ategorical: a categorical variable, such as "transitivity" or "accuracy", (a)bsolute: this needs to be perfectly divided between sets. This can only be assigned once. (d)isregard: a column that does not need to be taken into account for the split, but contains other information you have in the same file.
+When launching the script, please specify per column what kind a data the script should expect: 
+- (l)abel: just a label, will not be taken into consideration, could be the itemname or itemnumber. This can only be assigned once. 
+- (n)umerical: a numerical variable, such as frequency or AoA, 
+- (c)ategorical: a categorical variable, such as "transitivity" or "accuracy", 
+- (a)bsolute: this needs to be perfectly divided between sets. This can only be assigned once. 
+- (d)isregard: a column that does not need to be taken into account for the split, but contains other information you have in the same file.
 
 The package will try maximally 20 times to come-up with a good split. If it doesn't it will give up and output it's last try. You can always run it again. Often it will succeed eventually. If not, consider dropping variables.
 
 If you run the script without specifying --columns, you will be asked what you want per column. If you don't specify the desired number of runs, it will generate 1 output file.
+
+### Missing data
+If you choose an "absolute split variable", this variable cannot have missing data. The program will exit if it does. 
+For categorical variables, a dummy category is created that holds the items with missing data. For numerical variables,
+missing data is replaced with the average of this variable.
+If you prefer a different approach, please prepare your input file in a way that does not include missing data.
 
 ## Contributing
 
