@@ -1,5 +1,5 @@
-# TODO: work with missing data
 # TODO: maybe include more than 1 absolute variable? maybe all categorical variables can be absolute?
+# TODO: stop if silhouette score is too low. Exit with error message.
 # pylint: disable-msg=too-many-locals
 
 import argparse
@@ -166,10 +166,8 @@ def clustering(transformed_data, categorical_features, continuous_features):
             kproto = KPrototypes(n_clusters=k, max_iter=20)
             kproto.fit_predict(mark_array, categorical=categorical_features_idx)
             sil = metrics.silhouette_score(transformed_data, kproto.labels_, sample_size=1000)
-
             if sil > largest_sil[1]:
                 largest_sil = (k, sil)
-
         kproto_final = KPrototypes(n_clusters=largest_sil[0], max_iter=20)
 
         pred_cluster = kproto_final.fit_predict(mark_array, categorical=categorical_features_idx)
@@ -205,6 +203,7 @@ def clustering(transformed_data, categorical_features, continuous_features):
         for item in cluster:
             cluster_new.append(transformed_data.iloc[item].name)
         final_clusters.append(cluster_new)
+
     return final_clusters
 
 def divide_in_sets(clusters, output_sets):
