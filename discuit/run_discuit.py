@@ -1,5 +1,6 @@
 # TODO: maybe include more than 1 absolute variable? maybe all categorical variables can be absolute?
 # TODO: stop if silhouette score is too low. Exit with error message.
+# TODO: check whether I want Yates correction or not for Chi^2
 # pylint: disable-msg=too-many-locals
 
 import argparse
@@ -265,6 +266,7 @@ def statistics(data):
     # overall stats
     stats_out.append(kwtest("overall", continuous_features, sets, data))
     stats_out.append(chi("overall", categorical_features, data))
+    stats_out.append(chi("overall", absolute_features,data))
     return stats_out
 
 
@@ -369,7 +371,8 @@ def run_all(i, it_num):
         i = i + 1
         run_all(i, it_num)
     else:
-        print("failed")
+        print("\nCouldn't split into sets as expected. The output might be less than optimal, please run again for "
+              "better results")
         write_out(stats, i, True, it_num)
 
 
@@ -379,7 +382,7 @@ for it_num in range(iterations):
     # progress bar
     perc = 20//iterations
     progress = '=' * it_num * perc
-    percdone = it_num / iterations * 100
+    percdone = round(it_num / iterations * 100, None)
     sys.stdout.write('\r')
     sys.stdout.write(f"[{progress:20}] {percdone}%")
     sys.stdout.flush()
