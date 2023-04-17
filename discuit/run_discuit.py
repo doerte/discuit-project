@@ -1,6 +1,5 @@
 # TODO: maybe include more than 1 absolute variable? maybe all categorical variables can be absolute?
 # TODO: stop if silhouette score is too low. Exit with error message.
-# TODO: check whether I want Yates correction or not for Chi^2
 # pylint: disable-msg=too-many-locals
 
 import argparse
@@ -248,8 +247,21 @@ def chi(label, features, data):
     for feat in features:
         data_crosstab = pd.crosstab(data[feat],
                                     data['set_number'])
-        stat, p, dof, _ = chi2_contingency(data_crosstab, correction=True)
-        stats.append([label, "Chi2-Test", feat, stat, dof, p])
+
+        # check expected values and only use yates correction if any exp value < 5
+        _, _, _, exp = chi2_contingency(data_crosstab)
+        yates = False
+        test = "Chi2-Test"
+
+        for exp_list in exp:
+            if any(x < 5 for x in exp_list):
+                yates = True
+                test = "Chi2-Test with Yates correction"
+
+        stat, p, dof, _ = chi2_contingency(data_crosstab, correction=yates)
+
+        stats.append([label, test, feat, stat, dof, p])
+
     return stats
 
 
@@ -266,7 +278,7 @@ def statistics(data):
     # overall stats
     stats_out.append(kwtest("overall", continuous_features, sets, data))
     stats_out.append(chi("overall", categorical_features, data))
-    stats_out.append(chi("overall", absolute_features,data))
+    stats_out.append(chi("overall", absolute_features, data))
     return stats_out
 
 
@@ -287,8 +299,7 @@ def write_out(stats, i, significant, it_num):
             for testgroup in stats:
                 for test in testgroup:
                     stat_string += (f"Absolute variable instance '{stats[stats.index(testgroup)][testgroup.index(test)][0]}'"
-                                f": {stats[stats.index(testgroup)][testgroup.index(test)][1]} "
-                                f"+ ' for '"
+                                f": {stats[stats.index(testgroup)][testgroup.index(test)][1]} for "
                                 + stats[stats.index(testgroup)][testgroup.index(test)][2]
                                 + f": X2({stats[stats.index(testgroup)][testgroup.index(test)][4]}) = "
                                   f"{round(stats[stats.index(testgroup)][testgroup.index(test)][3],3)},"
