@@ -10,7 +10,7 @@ authors:
     orcid: "https://orcid.org/0000-0002-9437-6230"
 date-released: 2023-02-23
 doi: 10.5281/zenodo.7671856
-version: "0.1.0"
+version: "0.2.1"
 repository-code: "https://github.com/doerte/discuit-project"
 keywords:
   - item division

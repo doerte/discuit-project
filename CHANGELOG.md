@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2023-04-18
+
+### Fixed
+- removed faulty check for silhouette score
+
 ## [0.2.0] - 2023-04-18
 ### Added
 - provided example file
@@ -30,7 +35,8 @@ First release as alfa-version
 ### Changed
 
 
-[Unreleased]: https://github.com/doerte/discuit-project/compare/v0.1.0-alpha...main
+[Unreleased]: https://github.com/doerte/discuit-project/compare/v0.2.1...main
+[0.2.1]: https://github.com/doerte/discuit-project/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/doerte/discuit-project/compare/v0.1.0-alpha...v0.2.0
 [0.1.0]: https://github.com/doerte/discuit-project/releases/tag/v0.1.0-alpha
 
