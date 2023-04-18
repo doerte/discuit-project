@@ -1,5 +1,5 @@
 # TODO: maybe include more than 1 absolute variable? maybe all categorical variables can be absolute?
-# TODO: stop if silhouette score is too low. Exit with error message.
+# TODO: consider stopping if silhouette score is too low. Exit with error message.
 # pylint: disable-msg=too-many-locals
 
 import argparse

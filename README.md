@@ -36,7 +36,13 @@ The project setup is documented in [project_setup.md](project_setup.md).
 
 ## Installation
 
-To install discuit from GitHub repository, do:
+Discuit is available on PyPI!
+
+```bash
+pip install discuit
+```
+
+Or install the latest development version directly from GitHub:
 
 ```console
 git clone git@github.com:doerte/discuit-project.git
