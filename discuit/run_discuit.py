@@ -1,5 +1,6 @@
 # TODO: maybe include more than 1 absolute variable? maybe all categorical variables can be absolute?
 # TODO: consider stopping if silhouette score is too low. Exit with error message.
+# TODO: guess variable type
 # pylint: disable-msg=too-many-locals
 
 import argparse
@@ -267,7 +268,9 @@ def chi(label, features, data):
 
 def statistics(data):
     stats_out = []
-    subsets = data[absolute_features[0]].unique()
+    subsets = []
+    if len(absolute_features) > 0:
+        subsets = data[absolute_features[0]].unique()
     sets = data.set_number.unique()
 
     for subset in subsets:
@@ -298,11 +301,19 @@ def write_out(stats, i, significant, it_num):
 
             for testgroup in stats:
                 for test in testgroup:
-                    stat_string += (f"Absolute variable instance '{stats[stats.index(testgroup)][testgroup.index(test)][0]}'"
-                                f": {stats[stats.index(testgroup)][testgroup.index(test)][1]} for "
+                    if len(absolute_features) > 0:
+                        stat_string += (f"Absolute variable instance '{stats[stats.index(testgroup)][testgroup.index(test)][0]}'"
+                                    f": {stats[stats.index(testgroup)][testgroup.index(test)][1]} for "
+                                    + stats[stats.index(testgroup)][testgroup.index(test)][2]
+                                    + f": X2({stats[stats.index(testgroup)][testgroup.index(test)][4]}) = "
+                                      f"{round(stats[stats.index(testgroup)][testgroup.index(test)][3],3)},"
+                                      f"p = {round(stats[stats.index(testgroup)][testgroup.index(test)][5], 3)};\n")
+                    else:
+                        stat_string += (
+                                f"{stats[stats.index(testgroup)][testgroup.index(test)][1]} for "
                                 + stats[stats.index(testgroup)][testgroup.index(test)][2]
                                 + f": X2({stats[stats.index(testgroup)][testgroup.index(test)][4]}) = "
-                                  f"{round(stats[stats.index(testgroup)][testgroup.index(test)][3],3)},"
+                                  f"{round(stats[stats.index(testgroup)][testgroup.index(test)][3], 3)},"
                                   f"p = {round(stats[stats.index(testgroup)][testgroup.index(test)][5], 3)};\n")
 
 
