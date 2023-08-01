@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 def setup_package():
-    setup(name='discuit_package',
+    setup(name='discuit',
           packages=find_packages(),
           )
 
