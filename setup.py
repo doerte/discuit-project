@@ -1,7 +1,12 @@
-#!/usr/bin/env python
-import os
-from setuptools import setup
+from setuptools import setup, find_packages
+
+
+def setup_package():
+    setup(name='discuit_package',
+          packages=find_packages(),
+          )
 
 
 # see setup.cfg
-setup()
+if __name__ == "__main__":
+    setup_package()

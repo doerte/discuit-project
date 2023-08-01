@@ -54,11 +54,13 @@ Include a link to your project's full documentation here. -->
 
 ## Using Discuit
 In the terminal, run Discuit with the following command:
-python3 run_discuit.py "name of input file" [number of desired sets] --columns l/c/n/a/d --runs [desired number of runs]
+discuit "name of input file" [number of desired sets] --columns l/c/n/a/d --runs [desired number of runs]
 
-Example: python3 discuit/run_discuit.py example/input.csv 2 --columns l a n c n d --runs 3
+Example: discuit example/input.csv 2 --columns l a n c n d --runs 3
 
-This will run Discuit with the [provided testfile](example/input.csv) and create 2 subsets. The columns in the file are identified as "label", "categorical", "numerical", "absolute", "numerical" and "disregard" (in that order). The program will run 3 times (and create 3 output files).
+This will run Discuit with the [provided testfile](example/input.csv) and create 2 subsets. 
+The columns in the file are identified as "label", "categorical", "numerical", "absolute", "numerical" 
+and "disregard" (in that order). The program will run 3 times (and create 3 output files).
 
 ### Required input
 The input file needs to be a .csv file with a first line containing headings followed by rows that represent the different items. Each column specifies one variable. 
