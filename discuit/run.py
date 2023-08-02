@@ -8,10 +8,11 @@ from .clustering import divide_in_sets
 from .clustering import prepare_data
 from .clustering import split
 from .write import write_out
+from .write import write_streamlit
 
 
 def run_all(i, it_num, no_sets, input_d, continuous_features, categorical_features, label, disregard,
-            absolute_features, filename):
+            absolute_features, filename, streamlit):
     output_sets = []
     for _ in range(0, no_sets):
         output_sets.append([])
@@ -59,14 +60,22 @@ def run_all(i, it_num, no_sets, input_d, continuous_features, categorical_featur
 
     # write to files
     if all_ns:
-        write_out(stats, i, False, it_num, filename, input_d, no_sets, absolute_features, categorical_features,
+        if streamlit:
+            write_streamlit(stats, i, False, it_num, filename, input_d, no_sets, absolute_features, categorical_features,
+                  continuous_features)
+        else:
+            write_out(stats, i, False, it_num, filename, input_d, no_sets, absolute_features, categorical_features,
                   continuous_features)
     elif i < 19:
         i = i + 1
         run_all(i, it_num, no_sets, input_d, continuous_features, categorical_features, label, disregard,
-                absolute_features, filename)
+                absolute_features, filename, streamlit)
     else:
         print("\nCouldn't split into sets as expected. The output might be less than optimal, please run again for "
               "better results")
-        write_out(stats, i, True, it_num, filename, input_d, no_sets, absolute_features, categorical_features,
+        if streamlit:
+            write_streamlit(stats, i, False, it_num, filename, input_d, no_sets, absolute_features,
+                            categorical_features, continuous_features)
+        else:
+            write_out(stats, i, True, it_num, filename, input_d, no_sets, absolute_features, categorical_features,
                   continuous_features)

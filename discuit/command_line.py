@@ -135,7 +135,7 @@ def main():  # noqa: MC0001
         i = 0
         # start first loop
         run_all(i, it_num, no_sets, input_d, continuous_features, categorical_features, label, disregard,
-                absolute_features, filename)
+                absolute_features, filename, False)
 
     # final progress bar
     sys.stdout.write('\r')
