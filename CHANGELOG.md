@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2023-08-02
+
+###
+
 ## [0.3.0] - 2023-08-01
 
 ### Changed
@@ -39,9 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 First release as alfa-version
-### Removed
 
-### Changed
 
 
 [Unreleased]: https://github.com/doerte/discuit-project/compare/v0.3.0...main

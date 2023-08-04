@@ -6,17 +6,14 @@ import argparse
 import pathlib
 import sys
 import pandas as pd
+from .data import Output
 from .run import run_all
+from .write import write_to_file
 
 
-# set defaults
-iterations = 1
-no_sets = 2
-filename = "placeholder"
-input_d = pd.DataFrame()
+final_output = Output(runs=[])
 
-
-# The following info must come from user. In GUI this should be selected in the GUI after opening a file!
+# The following info must come from user.
 categorical_features = []
 continuous_features = []
 absolute_features = []
@@ -64,8 +61,11 @@ def main():  # noqa: MC0001
               "Make sure your input looks as follows: \n"
               "'model.py [path to csv file] [number of sets].'")
         sys.exit(1)  # abort
-    # number of runs provided as an argument. If nothing is provided it's 1. Also needs to come from GUI!
-    iterations = args.runs
+    # number of runs provided as an argument. If nothing is provided it's 1.
+    if args.runs is None:
+        iterations = 1
+    else:
+        iterations = args.runs
 
     # Check all the columns and ask about status. Label and absolute can only be chosen once.
     if args.columns is None or len(args.columns) != len(input_d.columns):  # noqa: MC0001
@@ -120,8 +120,8 @@ def main():  # noqa: MC0001
                 "More than one 'absolute' variable was specified. Please use -h to get help in "
                 "providing suitable arguments")
             sys.exit(1)  # abort
-    # actually run the program
 
+    # actually run the program
     for it_num in range(iterations):
         # progress bar
         perc = 20 // iterations
@@ -134,8 +134,12 @@ def main():  # noqa: MC0001
         # initiate loop-tracking
         i = 0
         # start first loop
-        run_all(i, it_num, no_sets, input_d, continuous_features, categorical_features, label, disregard,
-                absolute_features, filename, False)
+        output_run = run_all(i, it_num, no_sets, input_d, continuous_features, categorical_features, label, disregard,
+                             absolute_features, filename)
+        final_output.runs.append(output_run)
+
+    # write results to file
+    write_to_file(final_output)
 
     # final progress bar
     sys.stdout.write('\r')
