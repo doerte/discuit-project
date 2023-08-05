@@ -9,7 +9,7 @@ def write_to_file(output):
         with open(stat_file_name, "w", encoding="utf8") as f:
             stat_string = f'Number of iterations: {r.no_it} \n \nResults for comparison between ' \
                           f'new sets:\n'
-            # ToDo: always returns 1, check why
+
             if r.significant:
                 stat_string += "\nIn 20 iterations no split could be found that results in p>.2 for all variables.\n\n"
 

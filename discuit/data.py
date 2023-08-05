@@ -38,6 +38,7 @@ class Run:
     csv_name: str
     averages: List[Average]
     txt_name: Optional[str] = None
+    filename: str
 
 
 @dataclass

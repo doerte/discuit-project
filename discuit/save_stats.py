@@ -63,5 +63,5 @@ def to_dataclass(stats, i, significant, it_num, filename, input_d, no_sets, abso
                     avgs.append(avg)
 
     run = Run(csv_name=out_file_name, no_it=iterations, result=res, significant=significant, tables=tab,
-              txt_name=stat_file_name, dataframe=input_d, averages=avgs)
+              txt_name=stat_file_name, dataframe=input_d, averages=avgs, filename=filename)
     return run
