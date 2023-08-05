@@ -28,7 +28,7 @@ The package takes a csv file as input and generates a defined number of matched 
 - csv file ammended with the set membership for each item
 - txt file that reports on the outcomes of statistics tests
 
-If you want to use this package and it's functionality with a graphic user interface, check the [app on streamlit](https://discuit.streamlit.io).
+If you want to use this package and it's functionality with a graphic user interface, check the [app on streamlit](https://discuit.streamlit.app).
 
 The project setup is documented in [project_setup.md](project_setup.md).
 
