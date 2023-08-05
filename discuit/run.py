@@ -12,7 +12,6 @@ from .save_stats import to_dataclass
 
 def run_all(i, it_num, no_sets, input_d, continuous_features, categorical_features, label, disregard,
             absolute_features, filename):
-    print(i)
     output_sets = []
     for _ in range(0, no_sets):
         output_sets.append([])

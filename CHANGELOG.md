@@ -9,9 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.3.1] - 2023-08-02
+## [0.4.0] - 2023-08-05
 
-###
+### Changed
+- used dataclass for generating the output
+- dataclass is used to write from commandline but also accessible from outside
 
 ## [0.3.0] - 2023-08-01
 
@@ -46,7 +48,8 @@ First release as alfa-version
 
 
 
-[Unreleased]: https://github.com/doerte/discuit-project/compare/v0.3.0...main
+[Unreleased]: https://github.com/doerte/discuit-project/compare/v0.4.0...main
+[0.4.0]: https://github.com/doerte/discuit-project/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/doerte/discuit-project/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/doerte/discuit-project/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/doerte/discuit-project/compare/v0.1.0-alpha...v0.2.0

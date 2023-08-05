@@ -9,4 +9,4 @@ __all__ = ['run_all', 'Output']
 
 __author__ = "Dörte de Kok"
 __email__ = "me@doerte.eu"
-__version__ = "0.3.0"
+__version__ = "0.4.0"

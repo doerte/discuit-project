@@ -37,8 +37,9 @@ class Run:
     dataframe: pd.DataFrame
     csv_name: str
     averages: List[Average]
-    txt_name: Optional[str] = None
     filename: str
+    txt_name: Optional[str] = None
+
 
 
 @dataclass
