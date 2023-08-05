@@ -20,7 +20,7 @@
 
 ## About Discuit
 
-Discuit is a **D**ynamic **i**tem **s**et **c**lustering **UI** **t**ool (with the UI part yet to come)
+Discuit is a **D**ynamic **i**tem **s**et **c**lustering **UI** **t**ool (with the UI part on streamlit)
 
 Discuit can split datasets (e.g. words defined by several variables) into subsets that are as comparable as possible.
 
@@ -28,7 +28,7 @@ The package takes a csv file as input and generates a defined number of matched 
 - csv file ammended with the set membership for each item
 - txt file that reports on the outcomes of statistics tests
 
-In the future, this will be integrated in an GUI. 
+If you want to use this package and it's functionality with a graphic user interface, check the [app on streamlit](discuit.streamlit.io).
 
 The project setup is documented in [project_setup.md](project_setup.md).
 
